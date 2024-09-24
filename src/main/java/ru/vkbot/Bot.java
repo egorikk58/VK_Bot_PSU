@@ -69,9 +69,7 @@ public class Bot {
                         if (message.getText().equals("Начать")){
                             vk.messages().send(actor).message("Напиши свою группу").userId(message.getFromId()).randomId(random.nextInt(10000)).execute();
                         }
-                        else if (message.getText().equals("У Егора большой хуй")){
-                            vk.messages().send(actor).message("Ахуеть, спасибо большое за комплимент<3").userId(message.getFromId()).randomId(random.nextInt(10000)).execute();
-                        }
+
                         else if (message.getText().toUpperCase().matches("^[0-9]{2}[А-Я]{2}[0-9А-Я]{1}([0-9]{0,1})?$" )) {
                             Inform data = new Inform();
                             vk.messages().send(actor).message(data.find(message.getText().toUpperCase())).userId(message.getFromId()).randomId(random.nextInt(10000)).execute();
